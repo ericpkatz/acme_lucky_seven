@@ -6,9 +6,8 @@ const numbers = generateNumbers(11);
 
 const ul = document.querySelector('#numbers-list');
 
-let chosenNumber = window.location.hash.slice(1) * 1;
-
 const render = ()=> {
+  const chosenNumber = window.location.hash.slice(1) * 1;
   const html = numbers.map( num => {
     return `
       <li>
@@ -25,7 +24,6 @@ const render = ()=> {
 };
 
 window.addEventListener('hashchange', ()=> {
-  chosenNumber = window.location.hash.slice(1) * 1;
   render();
 });
 
